@@ -30,5 +30,4 @@ jobs:
         architecture: x64 # (x64 or x86) - defaults to x64
 
     - run: javac -sourcepath src/ src/MainClass.java
-    - run: cd src/
-    - run: java MainClass
+    - run: java -cp src/ MainClass
