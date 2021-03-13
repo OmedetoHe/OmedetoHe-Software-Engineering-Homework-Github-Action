@@ -1,11 +1,14 @@
+import java.io.*;
 import java.util.Scanner;
 
 public class MainClass {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        //Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/input.txt"), "UTF-8"));
         ReadTerm readTerm = new ReadTerm();
-        Polynomial1 myPoly = readTerm.getTerm(sc);
+        //Polynomial1 myPoly = readTerm.getTerm(sc);
+        Polynomial1 myPoly = readTerm.getTerm(br);
         //System.out.println(myPoly.getTerm());
         myPoly.deriveTerm();
         System.out.println(myPoly.getTerm());

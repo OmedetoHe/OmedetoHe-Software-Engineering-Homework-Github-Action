@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -37,8 +39,9 @@ public class ReadTerm {
         return sum;
     }
 
-    Polynomial1 getTerm(Scanner sc) {
-        String oriTerm = sc.nextLine();
+    Polynomial1 getTerm(BufferedReader br) throws IOException {
+        //String oriTerm = sc.nextLine();
+        String oriTerm = br.readLine();
         Pattern termPa = Pattern.compile(termExpression);
         Matcher termMa = termPa.matcher(oriTerm);
         Pattern termPaNum = Pattern.compile(numExpression);
